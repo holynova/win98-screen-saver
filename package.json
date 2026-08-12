@@ -1,0 +1,26 @@
+{
+  "name": "win98-screen-saver",
+  "version": "0.1.0",
+  "description": "Windows 95/98 经典屏幕保护程序的纯网页版复刻",
+  "private": true,
+  "type": "module",
+  "repository": "https://github.com/holynova/win98-screen-saver",
+  "homepage": "https://holynova.github.io/win98-screen-saver/",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/three": "^0.185.4",
+    "typescript": "^7.0.0",
+    "vite": "^8.2.0",
+    "vitest": "^4.1.0"
+  },
+  "dependencies": {
+    "three": "^0.185.1"
+  }
+}
