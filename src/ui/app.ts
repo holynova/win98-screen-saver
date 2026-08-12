@@ -14,7 +14,7 @@ export class ScreenSaverApp {
   private seed = Date.now();
   private pointerStart: { x: number; y: number } | null = null;
   private fullscreenStartedAt = 0;
-  private previewRestartFrame = 0;
+  private previewRestartTimer = 0;
 
   constructor(private readonly root: HTMLElement) {
     this.selected = savers.find((saver) => saver.id === loadSelectedSaver()) ?? savers[0]!;
@@ -97,8 +97,8 @@ export class ScreenSaverApp {
   }
 
   private schedulePreviewRestart(): void {
-    cancelAnimationFrame(this.previewRestartFrame);
-    this.previewRestartFrame = requestAnimationFrame(() => this.restartPreview());
+    window.clearTimeout(this.previewRestartTimer);
+    this.previewRestartTimer = window.setTimeout(() => this.restartPreview(), 120);
   }
 
   private inlineControlsMarkup(): string {

@@ -17,7 +17,7 @@ export abstract class ThreeSaver implements CanvasScreenSaver {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false, powerPreference: "high-performance" });
     this.renderer.setClearColor(0x000000, 1);
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    this.renderer.setPixelRatio(Math.min(2, window.devicePixelRatio || 1));
+    this.renderer.setPixelRatio(1);
     this.camera = new THREE.PerspectiveCamera(fieldOfView, 1, 0.045, 120);
   }
 
@@ -26,7 +26,13 @@ export abstract class ThreeSaver implements CanvasScreenSaver {
   render(): void {
     this.renderer.render(this.scene, this.camera);
     this.targetContext.setTransform(1, 0, 0, 1, 0, 0);
-    this.targetContext.drawImage(this.renderer.domElement, 0, 0, this.renderer.domElement.width, this.renderer.domElement.height);
+    this.targetContext.drawImage(
+      this.renderer.domElement,
+      0,
+      0,
+      this.targetContext.canvas.width,
+      this.targetContext.canvas.height,
+    );
   }
 
   resize(width: number, height: number): void {
@@ -34,7 +40,7 @@ export abstract class ThreeSaver implements CanvasScreenSaver {
     this.height = height;
     this.camera.aspect = width / Math.max(1, height);
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(width, height, false);
+    this.renderer.setSize(this.targetContext.canvas.width, this.targetContext.canvas.height, false);
   }
 
   destroy(): void {
