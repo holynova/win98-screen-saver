@@ -43,13 +43,15 @@ export class ScreenSaverApp {
               <div class="monitor-mark"><span>COLOR DISPLAY</span><i aria-hidden="true"></i></div>
             </div>
             <div class="preview-toolbar">
-              <label class="saver-picker" for="saver-select"><span>屏幕保护程序</span><select id="saver-select">${savers.map((saver) => `<option value="${saver.id}"${saver.id === this.selected.id ? " selected" : ""}>${saver.name}</option>`).join("")}</select></label>
               <button id="fullscreen-button" type="button" class="primary-action"><span aria-hidden="true">⛶</span> 全屏欣赏</button>
             </div>
-            <p id="saver-description" class="saver-description">${this.selected.description}</p>
           </section>
           <aside class="options-panel" aria-labelledby="options-title">
             <div class="options-heading"><div><span class="section-index">02</span><h2 id="options-title">显示选项</h2></div><button id="reset-button" type="button">恢复默认</button></div>
+            <div class="saver-control">
+              <label class="saver-picker" for="saver-select"><span>屏幕保护程序</span><select id="saver-select">${savers.map((saver) => `<option value="${saver.id}"${saver.id === this.selected.id ? " selected" : ""}>${saver.name}</option>`).join("")}</select></label>
+              <p id="saver-description" class="saver-description">${this.selected.description}</p>
+            </div>
             <div id="inline-controls" class="inline-controls">${this.inlineControlsMarkup()}</div>
             <div class="options-footnote"><strong>即时生效</strong><span>参数会自动保存。预览与全屏使用同一套画面设置。</span></div>
           </aside>
