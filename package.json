@@ -10,8 +10,10 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
+    "build:pages": "tsc --noEmit && vite build --outDir docs && touch docs/.nojekyll",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "worker:deploy": "pnpm run build && npx wrangler deploy"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

@@ -1,0 +1,12 @@
+name = "win98-screen-saver"
+account_id = "ef7863c4de93e71c3496f940c8ab4865"
+compatibility_date = "2026-09-04"
+workers_dev = false
+
+[assets]
+directory = "./dist"
+not_found_handling = "single-page-application"
+
+[[routes]]
+pattern = "win98-screen-saver.xiaosang.cc"
+custom_domain = true
