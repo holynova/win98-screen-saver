@@ -212,7 +212,7 @@ export const pipesSaver: SaverDefinition = {
   defaults: { multiple: true, flex: false, joint: "mixed", surface: "solid", speed: 1 },
   controls: [
     { type: "toggle", key: "multiple", label: "多根管道" },
-    { type: "toggle", key: "flex", label: "柔性管道" },
+    { type: "toggle", key: "flex", label: "弯曲管道" },
     { type: "select", key: "joint", label: "接头", options: [{ value: "elbow", label: "弯头" }, { value: "ball", label: "球体" }, { value: "mixed", label: "混合" }] },
     { type: "select", key: "surface", label: "表面", options: [{ value: "solid", label: "实体" }, { value: "candy", label: "糖果条纹" }] },
     { type: "range", key: "speed", label: "生长速度", min: 0.35, max: 2.2, step: 0.05, minLabel: "慢", maxLabel: "快" },

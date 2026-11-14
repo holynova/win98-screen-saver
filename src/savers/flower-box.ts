@@ -160,7 +160,7 @@ export const flowerBoxSaver: SaverDefinition = {
     { type: "range", key: "subdivisions", label: "细分", min: 4, max: 14, step: 1, minLabel: "粗糙", maxLabel: "细腻" },
     { type: "range", key: "size", label: "尺寸", min: 0.55, max: 1.45, step: 0.05, minLabel: "小", maxLabel: "大" },
     { type: "toggle", key: "smooth", label: "平滑着色" },
-    { type: "toggle", key: "bloom", label: "开花" },
+    { type: "toggle", key: "bloom", label: "花瓣开合" },
     { type: "toggle", key: "cycle", label: "循环颜色" },
     { type: "toggle", key: "spin", label: "旋转" },
   ],

@@ -104,7 +104,7 @@ export const mystifySaver: SaverDefinition = {
   description: "彩色多边形在黑色空间反弹，并留下层层叠加的霓虹轨迹。",
   defaults: { trails: 8, speed: 1, secondShape: true },
   controls: [
-    { type: "range", key: "trails", label: "轨迹数量", min: 2, max: 18, step: 1, minLabel: "短", maxLabel: "长" },
+    { type: "range", key: "trails", label: "轨迹数量", min: 2, max: 18, step: 1, minLabel: "少", maxLabel: "多" },
     { type: "range", key: "speed", label: "移动速度", min: 0.35, max: 2.4, step: 0.05, minLabel: "慢", maxLabel: "快" },
     { type: "toggle", key: "secondShape", label: "显示第二组图形" },
   ],
