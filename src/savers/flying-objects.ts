@@ -165,7 +165,7 @@ export const flyingObjectsSaver: SaverDefinition = {
     { type: "select", key: "type", label: "物体", options: [{ value: "logo", label: "Windows 标志" }, { value: "explode", label: "爆炸" }, { value: "ribbon", label: "丝带" }, { value: "double-ribbon", label: "双丝带" }, { value: "splash", label: "飞溅" }, { value: "twist", label: "扭曲" }, { value: "flag", label: "纹理旗帜" }] },
     { type: "range", key: "size", label: "尺寸", min: 0.55, max: 1.45, step: 0.05, minLabel: "小", maxLabel: "大" },
     { type: "range", key: "speed", label: "速度", min: 0.35, max: 2.2, step: 0.05, minLabel: "慢", maxLabel: "快" },
-    { type: "toggle", key: "smooth", label: "平滑" },
+    { type: "toggle", key: "smooth", label: "平滑线条" },
     { type: "toggle", key: "cycle", label: "循环颜色" },
   ],
   create: (settings, seed) => new FlyingObjectsSaver(settings, seed),
