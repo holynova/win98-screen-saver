@@ -1,24 +1,24 @@
+<p align="right"><a href="README.en.md">English</a></p>
+
 <p align="center">
   <img src="./assets/readme/hero.svg" width="100%" alt="Win98 屏保 — 青色桌面与藏青标题栏，右侧 CRT 显示器里星点从中心向外飞掠，下方是彩色 3D 管道">
 </p>
 
 <p align="center">
-  <a href="https://xiaosang.cc/win98-screen-saver/">▶ 在线体验 View Online</a>
+  <a href="https://xiaosang.cc/win98-screen-saver/">▶ 在线体验</a>
   ·
   <a href="https://github.com/holynova/win98-screen-saver">GitHub 仓库</a>
 </p>
 
 Windows 95/98 经典屏幕保护程序的纯网页版复刻：11 个经典动画全部用前端重写（Canvas 2D + WebGL），没有系统镜像、原始 SCR 文件或后端服务。CRT 显示器框里实时预览，右侧调参即时生效，参数自动保存到本机；点「全屏欣赏」进入真正的屏保模式，动鼠标、点按或按任意键退出。
 
-A pure-web remake of the classic Windows 95/98 screen savers: all 11 animations are reimplemented in the browser (Canvas 2D + WebGL) — no system images, no original SCR files, no backend. Preview live inside a CRT monitor frame, tune parameters on the right (saved to your browser automatically), and hit fullscreen for the real screen-saver experience — move the mouse, click, or press any key to exit.
-
-## 截图 / Screenshots
+## 截图
 
 <p align="center">
   <img src="./assets/readme/screenshot.png" width="800" alt="主界面：青色桌面上的银灰窗口，左侧 CRT 显示器实时预览飞越星空，右侧显示选项面板有星星密度与飞行速度滑杆">
 </p>
 
-## 11 个屏保 / The Savers
+## 11 个屏保
 
 | 屏保 | 画面 |
 | --- | --- |
@@ -34,7 +34,7 @@ A pure-web remake of the classic Windows 95/98 screen savers: all 11 animations 
 | 滚动字幕 | 纯色背景上滚动自定义文字，支持经典随机位置模式 |
 | 空白屏幕 | 最安静的经典屏保：只保留纯黑 |
 
-## 功能 / Features
+## 功能
 
 - **实时预览**：CRT 显示器框内实时播放，`ResizeObserver` 自适应窗口大小，适配 4:3、宽屏与超宽屏。
 - **调参**：每个屏保有自己的控制项（滑杆/下拉/开关/文本/颜色），改动 120ms 后重启动画、即时生效。
@@ -42,7 +42,7 @@ A pure-web remake of the classic Windows 95/98 screen savers: all 11 animations 
 - **全屏屏保**：独立全屏引擎（DPR 上限 2），启动 800ms 后鼠标移动超过 18px、点按或按任意键即退出；浏览器不支持全屏时自动降级为铺满窗口。
 - **关于弹窗**：经典 Win98 风格标题栏对话框，说明项目与版本（v0.1.0）。
 
-## 技术 / Tech
+## 技术
 
 - TypeScript + Vite 8，`three` 0.185（WebGL 屏保），其余屏保走 Canvas 2D；构建输出 `docs/`（`tsc --noEmit && vite build`）。
 - 每个屏保是独立模块（`src/savers/`），实现统一的 `SaverDefinition` 接口（id、名称、描述、默认值、控制项、`create`），引擎按 `dt` 驱动更新与渲染，每次切换用新种子重开。
@@ -55,11 +55,3 @@ src/
   ui/       app.ts（外壳、预览、全屏、关于弹窗）、icons.ts
   storage.ts  localStorage 读写（设置 + 当前选择）
 ```
-
-## English
-
-**Win98 Screen Saver** — a pure-web remake of the classic Windows 95/98 screen savers, 11 animations reimplemented with Canvas 2D + WebGL (Three.js 0.185), built with TypeScript + Vite 8.
-
-- **The savers**: Starfield, 3D Pipes, 3D Maze, 3D Flower Box, 3D Flying Objects, 3D Text (type `volcano` for a hidden message), Mystify, Flying Windows, Curves & Colors, Marquee, Blank Screen.
-- **Features**: live preview inside a CRT monitor frame, adaptive to 4:3 / widescreen / ultrawide; per-saver controls (range/select/toggle/text/color) applied live; settings and the current selection auto-saved to `localStorage`; fullscreen mode that exits on mouse move (>18px), click, or any key; one-click restore defaults.
-- **Tech**: each saver is a module implementing a shared `SaverDefinition` interface; the engine drives updates by delta time and reseeds on every switch; Vitest tests (3 files, 7 cases); build output goes to `docs/`.
